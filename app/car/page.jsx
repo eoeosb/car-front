@@ -236,10 +236,52 @@ export default function CarBatteryDetection() {
         >
           {anomaly}
         </div>
+
+        {/* 모바일 화면 UI 예시 */}
+        <div className='relative w-[350px] h-[700px] bg-gray-100 p-4 rounded-lg shadow-lg mb-6'>
+          {/* 모바일 상단바 */}
+          <div className='flex justify-between items-center bg-gray-200 p-2 rounded-t-lg'>
+            <span className='text-xs'>SKT 10:21</span>
+            <span className='text-xs'>배터리: 54%</span>
+          </div>
+
+          {/* 중앙 자동차 그림 및 알림 */}
+          <div className='flex flex-col items-center p-4'>
+            <div className='w-48 h-24 bg-gray-400 mb-4 rounded-lg'>
+              <img
+                src='/car_example.png'
+                alt='Car'
+                className='w-48 h-24 mb-4 rounded-lg'
+              />
+            </div>{' '}
+            {/* 자동차 그림 예시 */}
+            <p
+              className={`text-lg font-bold ${
+                anomaly === 'Anomaly Detected'
+                  ? 'text-red-500'
+                  : 'text-green-500'
+              }`}
+            >
+              {anomaly === 'Anomaly Detected'
+                ? '배터리 이상 탐지'
+                : '정상 상태'}
+            </p>
+          </div>
+
+          {/* 모바일 하단 네비게이션 바 */}
+          <div className='absolute bottom-0 left-0 right-0 bg-gray-200 p-2 rounded-b-lg flex justify-around'>
+            <span className='text-xs'>홈</span>
+            <span className='text-xs'>제어</span>
+            <span className='text-xs'>상태</span>
+            <span className='text-xs'>지도</span>
+            <span className='text-xs'>더보기</span>
+          </div>
+        </div>
       </div>
 
+      {/* 메인 페이지로 돌아가기 버튼 */}
       <button
-        className='absolute bottom-6 right-6 bg-blue-500 text-white px-6 py-4 rounded-lg text-xl'
+        className='absolute bottom-1 right-6 bg-blue-500 text-white px-6 py-4 rounded-lg text-xl'
         onClick={() => router.push('/')}
       >
         메인 페이지로 돌아가기
