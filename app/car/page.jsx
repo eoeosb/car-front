@@ -80,7 +80,7 @@ export default function CarBatteryDetection() {
           '배터리에 이상이 탐지되었습니다. 가까운 정비소에 가서 정비를 받으세요.'
         );
       }, 1000);
-    }, 30000); // 30초 후 실행
+    }, 60000); // 30초 후 실행
 
     // 최소 온도 서서히 증가
     tempIntervalId = setInterval(() => {
